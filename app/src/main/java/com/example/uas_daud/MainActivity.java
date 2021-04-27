@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         if (response.contains(userNama)){
                             startActivity(new Intent(MainActivity.this,Home.class));
-                            Toast.makeText(MainActivity.this, "Login Suucess"+response, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Login Suucess", Toast.LENGTH_SHORT).show();
                         }else {
-                            Toast.makeText(MainActivity.this, "Login Failed"+response, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },

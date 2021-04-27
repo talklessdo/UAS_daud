@@ -51,8 +51,8 @@ public class Home extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         if (response.contains("kegemaran")){
-                            Toast.makeText(Home.this, "Ada namanya"+response, Toast.LENGTH_SHORT).show();
-                            JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET,
+                            Toast.makeText(Home.this, "Ini response nya : "+response, Toast.LENGTH_SHORT).show();
+                            JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.POST,
                                     "http://192.168.5.219/MPA/jsondb/show.php", null, new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject response) {
@@ -70,12 +70,12 @@ public class Home extends AppCompatActivity {
                             }, new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(Home.this, "erro :"+error.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Home.this, "error :"+error.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                             mque.add(objectRequest);
                         }else {
-                            Toast.makeText(Home.this, "Nama tidak terdaftar"+response, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Home.this, "Nama tidak terdaftar", Toast.LENGTH_SHORT).show();
                         }
 
                     }
